@@ -30,7 +30,7 @@ public class Main {
     public static void main(String... args) {
         List<Integer> example = new ArrayList<>();
         int min = 0;
-        int max = 999_999;
+        int max = 999_999_999;
         for (int i = min; i < max + 1; i++) {
             example.add(i);
         }
