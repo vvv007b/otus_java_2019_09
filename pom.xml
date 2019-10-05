@@ -7,10 +7,6 @@
 
     <modelVersion>4.0.0</modelVersion>
 
-    <!-- Project Object Model -->
-    <!-- All POMs extend the Super POM unless explicitly set -->
-    <!--<parent>*</parent>-->
-
     <groupId>ru.otus</groupId>
     <artifactId>otus-java</artifactId>
     <version>2019-09-SNAPSHOT</version>
@@ -19,13 +15,7 @@
 
     <developers>
         <developer>
-            <name>Sergey</name>
-        </developer>
-        <developer>
-            <name>Vyacheslav Lapin</name>
-        </developer>
-        <developer>
-            <name>Vadim Tisov</name>
+            <name>Bykadorov</name>
         </developer>
     </developers>
 
@@ -35,8 +25,8 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>12</maven.compiler.source>
-        <maven.compiler.target>12</maven.compiler.target>
+        <maven.compiler.source>13</maven.compiler.source>
+        <maven.compiler.target>13</maven.compiler.target>
         <com.google.guava.version>27.1-jre</com.google.guava.version>
         <my.variable>42</my.variable>
     </properties>
@@ -62,6 +52,5 @@
             </plugins>
         </pluginManagement>
     </build>
-
 
 </project>
