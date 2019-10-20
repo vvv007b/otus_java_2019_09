@@ -1,7 +1,3 @@
-
-
-import java.util.Random;
-
 public class DIYarrayListTest {
 
     public static void main(String[] args) {
