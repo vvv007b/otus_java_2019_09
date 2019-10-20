@@ -1,20 +1,25 @@
-import java.util.ArrayList;
-import java.util.List;
+
+
+import java.util.Random;
 
 public class DIYarrayListTest {
+
     public static void main(String[] args) {
-        List eList = new ArrayList();
-        eList.add("1");
-        eList.add(2);
-        eList.add(3.0);
-        eList.add(4l);
-        eList.addAll(eList);
-        DIYarrayList<Integer> diYarrayList = new DIYarrayList();
-        System.out.println(diYarrayList.size());
-        System.out.println(eList);
+        DIYarrayList<String> diyArrayList1 = new DIYarrayList<String>();
+        DIYarrayList<String> diyArrayList2 = new DIYarrayList<String>(100);
 
-
+       String[] a = new String[100];
+        for (int i = 0; i < a.length ; i++) {
+            a[i] = "" + i;
+        }
+        java.util.Collections.addAll(diyArrayList1,a);
+        java.util.Collections.copy(diyArrayList2, diyArrayList1);
+        java.util.Collections.sort(diyArrayList2, String::compareTo);
+        java.util.Collections.sort(diyArrayList1, String::compareTo  );
+        for (int i = 0; i <diyArrayList1.size(); i++) {
+            System.out.println(diyArrayList1.get(i));
+            System.out.println(diyArrayList2.get(i));
+        }
     }
-
 
 }
