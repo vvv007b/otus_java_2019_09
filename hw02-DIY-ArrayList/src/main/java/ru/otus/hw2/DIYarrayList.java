@@ -70,8 +70,9 @@ public class DIYarrayList<T> implements List<T> {
     }
 
     private Object[] increase(int minSize) {
-        return objects = Arrays.copyOf(objects,
+        objects = Arrays.copyOf(objects,
                 newSize(minSize));
+        return objects;
     }
 
     private int newSize(int minCapacity) {
@@ -138,11 +139,11 @@ public class DIYarrayList<T> implements List<T> {
         int collectionLength = a.length;
         if (collectionLength == 0)
             return false;
-        Object[] objects;
+        Object[] obj;
         final int s;
-        if (collectionLength > (objects = this.objects).length - (s = size))
-            objects = increase(s + collectionLength);
-        System.arraycopy(a, 0, objects, s, collectionLength);
+        if (collectionLength > (obj = this.objects).length - (s = size))
+            obj = increase(s + collectionLength);
+        System.arraycopy(a, 0, obj, s, collectionLength);
         size = s + collectionLength;
         return true;
     }
@@ -208,7 +209,9 @@ public class DIYarrayList<T> implements List<T> {
                 throw new NoSuchElementException();
             Object[] elementData = DIYarrayList.this.objects;
             cursor = i + 1;
-            return (T) elementData[lastRet = i];
+            lastRet = i;
+            T nextEl = (T) elementData[lastRet];
+            return nextEl;
         }
 
         @Override
