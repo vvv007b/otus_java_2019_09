@@ -12,10 +12,9 @@ public class DIYarrayList<T> implements List<T> {
 
 
     //конструктор с заданным размером
-    public DIYarrayList(int size) {
-        if (size >= 0) {
-            this.size = size;
-            objects = new Object[size];
+    public DIYarrayList(int len) {
+        if (len >= 0) {
+             objects = new Object[len];
         }
         else {
             throw new IllegalArgumentException("Wrong size");
@@ -135,7 +134,17 @@ public class DIYarrayList<T> implements List<T> {
 
     @Override
     public boolean addAll(Collection<? extends T> c) {
-        throw new UnsupportedOperationException();
+        Object[] a = c.toArray();
+        int collectionLength = a.length;
+        if (collectionLength == 0)
+            return false;
+        Object[] objects;
+        final int s;
+        if (collectionLength > (objects = this.objects).length - (s = size))
+            objects = increase(s + collectionLength);
+        System.arraycopy(a, 0, objects, s, collectionLength);
+        size = s + collectionLength;
+        return true;
     }
 
     @Override
