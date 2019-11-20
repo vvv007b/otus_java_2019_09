@@ -1,4 +1,4 @@
-package ru.otus.l011;
+package ru.otus.hw1;
 
 import com.google.common.collect.Lists;
 

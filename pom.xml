@@ -22,12 +22,14 @@
     <modules>
         <module>hw01-maven</module>
         <module>hw02-DIY-ArrayList</module>
+        <module>hw03-garbage-collection</module>
+
     </modules>
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <maven.compiler.source>13</maven.compiler.source>
-        <maven.compiler.target>13</maven.compiler.target>
+        <maven.compiler.source>8</maven.compiler.source>
+        <maven.compiler.target>8</maven.compiler.target>
         <com.google.guava.version>27.1-jre</com.google.guava.version>
         <my.variable>42</my.variable>
     </properties>
